@@ -36,4 +36,8 @@ contract FoodVoting {
         FoodItem memory item = foodItems[_foodItemId];
         return (item.name, item.voteCount);
     }
+
+    function getAllFoodItems() public view returns (FoodItem[] memory) {
+        return foodItems;
+    }
 }

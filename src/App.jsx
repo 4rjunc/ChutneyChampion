@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 
 import AnonAadhaarWrapper from "./components/AnonAadhaarWrapper";
@@ -9,7 +9,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [walletAddress, setWalletAddress] = useState(null);
-
+  useEffect(() => {
+    setReady(true);
+  }, []);
+  const [ready, setReady] = useState(false);
   const connectWallet = async () => {
     if (window.ethereum) {
       try {
@@ -48,18 +51,25 @@ function App() {
       console.error("Ethereum object not found, install MetaMask.");
     }
   };
+
   return (
-    <AnonAadhaarWrapper>
-      <div className="main">
-        <h1>Aadhaar Verification DApp</h1>
-        <WalletConnection
-          walletAddress={walletAddress}
-          disconnectWallet={disconnectWallet}
-          connectWallet={connectWallet}
-        />
-        {walletAddress && <VerificationProcess walletAddress={walletAddress} />}
-      </div>
-    </AnonAadhaarWrapper>
+    <>
+      {ready ? (
+        <AnonAadhaarWrapper>
+          <div className="main">
+            <h1>Aadhaar Verification DApp</h1>
+            <WalletConnection
+              walletAddress={walletAddress}
+              disconnectWallet={disconnectWallet}
+              connectWallet={connectWallet}
+            />
+            {walletAddress && (
+              <VerificationProcess walletAddress={walletAddress} />
+            )}
+          </div>
+        </AnonAadhaarWrapper>
+      ) : null}
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useAnonAadhaar, LaunchProveModal } from "@anon-aadhaar/react";
+import VotingInterface from "./VotingInterface";
 
 const LaunchMode = ({ isTest, setIsTestMode, address }) => {
   return (
@@ -52,6 +53,7 @@ function VerificationProcess({ walletAddress }) {
         {anonAadhaar?.status === "logged-in" && (
           <>
             <p>✅ Proof is valid</p>
+            <VotingInterface walletAddress={walletAddress} />
           </>
         )}
       </div>
