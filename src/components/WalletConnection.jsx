@@ -3,7 +3,7 @@ function WalletConnection({ walletAddress, connectWallet, disconnectWallet }) {
     <div>
       {walletAddress ? (
         <div>
-          <p className="p-3 bg-info bg-opacity-10 border border-info  rounded">
+          <p className="p-3 bg-info bg-opacity-10 border border-info  rounded fs-5">
             Connected Wallet: {walletAddress}
           </p>
           <button onClick={disconnectWallet}>Disconnect</button>
