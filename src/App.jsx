@@ -57,7 +57,7 @@ function App() {
           disconnectWallet={disconnectWallet}
           connectWallet={connectWallet}
         />
-        {walletAddress && <VerificationProcess />}
+        {walletAddress && <VerificationProcess walletAddress={walletAddress} />}
       </div>
     </AnonAadhaarWrapper>
   );
