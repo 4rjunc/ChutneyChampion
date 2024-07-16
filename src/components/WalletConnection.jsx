@@ -1,6 +1,6 @@
 function WalletConnection({ walletAddress, connectWallet, disconnectWallet }) {
   return (
-    <div className="wallet-connection">
+    <div>
       {walletAddress ? (
         <div>
           <p>Connected Wallet: {walletAddress}</p>

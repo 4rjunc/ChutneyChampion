@@ -5,6 +5,8 @@ import AnonAadhaarWrapper from "./components/AnonAadhaarWrapper";
 import WalletConnection from "./components/WalletConnection";
 import VerificationProcess from "./components/VerificationProcess";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const [walletAddress, setWalletAddress] = useState(null);
 
@@ -48,7 +50,7 @@ function App() {
   };
   return (
     <AnonAadhaarWrapper>
-      <div className="App main">
+      <div className="main">
         <h1>Aadhaar Verification DApp</h1>
         <WalletConnection
           walletAddress={walletAddress}

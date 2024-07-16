@@ -5,31 +5,18 @@ import {
   AnonAadhaarProof,
 } from "@anon-aadhaar/react";
 
-function VerificationProcess({ startVerification }) {
-  const [isLoading, setIsLoading] = useState(false);
+function VerificationProcess() {
   const [anonAadhaar] = useAnonAadhaar();
 
   useEffect(() => {
     console.log("Anon Aadhaar status: ", anonAadhaar.status);
   }, [anonAadhaar]);
 
-  const handleVerification = async () => {
-    setIsLoading(true);
-    try {
-      await startVerification();
-    } catch (error) {
-      console.error("Verification failed:", error);
-    }
-    setIsLoading(false);
-  };
-
   return (
-    <div className="verification-process">
+    <div>
       <h2>Aadhaar Verification</h2>
       <div>
-        <LogInWithAnonAadhaar
-          nullifierSeed={22418512023313350206149252188115262810613380}
-        />
+        <LogInWithAnonAadhaar nullifierSeed={1234} />
         <p>{anonAadhaar?.status}</p>
       </div>
       <div>
