@@ -46,13 +46,12 @@ function VerificationProcess({ walletAddress }) {
         />
       </div>
       <div className="mt-3 px-2">
-        <p className="fs-4 fw-medium  text-success">{anonAadhaar?.status}</p>
-      </div>
-      <div>
         {/* Render the proof if generated and valid */}
         {anonAadhaar?.status === "logged-in" && (
           <>
-            <p className="fs-3">✅ Proof is valid</p>
+            <p className="fs-3 fw-medium  text-center">
+              ✅ Proof is valid, You can cast your vote now 🗳️{" "}
+            </p>
             <VotingInterface walletAddress={walletAddress} />
           </>
         )}
