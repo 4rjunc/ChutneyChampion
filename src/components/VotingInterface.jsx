@@ -215,7 +215,7 @@ function FoodVotingInterface({ walletAddress }) {
 
   return (
     <div className="food-voting-interface">
-      <h2>Vote for Your Favorite South Indian Dish</h2>
+      <h2>Vote for Your Favorite Indian Dish</h2>
       <div className="food-items">
         {foodItems.map((item) => (
           <div key={item.id} className="food-item">
