@@ -229,7 +229,7 @@ function FoodVotingInterface({ walletAddress }) {
           </div>
         ))}
       </div>
-      {hasVoted && <p>Thank you for voting!</p>}
+      {hasVoted && <p className="text-center fs-3">Thank you for voting!</p>}
     </div>
   );
 }
