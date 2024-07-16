@@ -56,7 +56,7 @@ function App() {
     <>
       {ready ? (
         <AnonAadhaarWrapper>
-          <div className="main">
+          <div className="main mt-4">
             <h1>ChutneyChampion</h1>
             <WalletConnection
               walletAddress={walletAddress}
